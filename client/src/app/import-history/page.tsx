@@ -50,8 +50,35 @@ export default function ImportHistoryPage() {
     <main style={{ padding: "2rem" }}>
       <h1 style={{ marginBottom: "1rem" }}>Import History</h1>
       {loading ? (
-        <p>Loading...</p>
-      ) : logs.length === 0 ? (
+  <div style={{ display: "flex", justifyContent: "center", padding: "2rem" }}>
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="35"
+        strokeWidth="10"
+        stroke="#0070f3"
+        strokeDasharray="164.93361431346415 56.97787143782138"
+        fill="none"
+        strokeLinecap="round"
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          repeatCount="indefinite"
+          dur="1s"
+          values="0 50 50;360 50 50"
+          keyTimes="0;1"
+        />
+      </circle>
+    </svg>
+  </div>
+) : logs.length === 0 ? (
         <p>No import logs found.</p>
       ) : (
         <table

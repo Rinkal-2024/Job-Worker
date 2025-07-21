@@ -27,7 +27,7 @@ export async function processJobs(fileName: string, jobs: JobData[]) {
       if (!guid) throw new Error("Missing GUID/link/title");
 
       const jobId = generateJobId(rawJob);
-      const jobData = { ...rawJob, jobId }; // Add jobId to schema
+      const jobData = { ...rawJob, jobId };
 
       const existing = await JobModel.findOne({ jobId });
 
