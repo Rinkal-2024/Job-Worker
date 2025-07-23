@@ -8,4 +8,8 @@ const app = express();
 app.use(express.json());
 app.use("/api", historyRoutes);
 
+app.use("/*", (req, res) => {
+  res.send("Test Route");
+});
+
 export default app;
