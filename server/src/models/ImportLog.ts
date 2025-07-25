@@ -10,4 +10,6 @@ const importLogSchema = new mongoose.Schema({
   failedJobs: [{ reason: String, data: Object }],
 });
 
+importLogSchema.index({ timestamp: -1 });
+
 export const ImportLog = mongoose.model("import_logs", importLogSchema);
